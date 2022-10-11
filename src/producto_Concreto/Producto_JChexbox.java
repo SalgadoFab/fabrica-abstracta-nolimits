@@ -7,6 +7,12 @@ import javax.swing.*;
 public class Producto_JChexbox implements Component {
 
     private JCheckBox checkBox = new JCheckBox();
+    private static final String tipo = "JCheckBox";
+    private int identificador;
+
+    public void setIdentificador(int identificador) {
+        this.identificador = 200000 + identificador;
+    }
 
 
     @Override
