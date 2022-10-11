@@ -9,10 +9,8 @@ import java.awt.*;
 public class Producto_JButton implements Component {
 
     private JButton jButton = new JButton();
-
     private static final String tipo = "JButton";
     private int identificador;
-
     public void setIdentificador(int identificador) {
         this.identificador = 200000 + identificador;
     }
