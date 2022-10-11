@@ -46,26 +46,26 @@ public class Producto_JChexbox implements Component {
 
     @Override
     public void agregarEnContenedor(JFrame pFrame) {
-
+        pFrame.add(this.checkBox);
     }
 
     @Override
     public String obtenerTexto() {
-        return null;
+        return this.checkBox.getText();
     }
 
     @Override
     public JComponent obtenerComponente() {
-        return null;
+        return this.checkBox;
     }
 
     @Override
     public String tipo() {
-        return null;
+        return this.tipo();
     }
 
     @Override
     public int identificador() {
-        return 0;
+        return identificador;
     }
 }
