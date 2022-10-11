@@ -1,14 +1,11 @@
 package producto_Concreto;
-
 import producto_Abstracto.Component;
-
 import javax.swing.*;
 import java.awt.*;
 
-public class Producto_JChexbox implements Component {
-
-    private JCheckBox checkBox = new JCheckBox();
-    private static final String tipo = "JCheckBox";
+public class Producto_JTextArea implements Component {
+    private JTextArea textArea = new JTextArea();
+    private static final String tipo = "JTextArea";
     private int identificador;
 
     public void setIdentificador(int identificador) {
@@ -18,54 +15,53 @@ public class Producto_JChexbox implements Component {
     public int generarIdentificador() {
         return (int) (Math.random() * 9999);
     }
-
     @Override
     public void agregarTexto(String pTexto) {
-        checkBox.setText(pTexto);
+        this.textArea.setText(pTexto);
     }
 
     @Override
     public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
-        this.checkBox.setMinimumSize(new Dimension(pLargo, pAlto));
-        this.checkBox.setPreferredSize(new Dimension(pLargo, pAlto));
-        this.checkBox.setMaximumSize(new Dimension(pLargo, pAlto));
+        this.textArea.setMinimumSize(new Dimension(pLargo,pAlto));
+        this.textArea.setPreferredSize(new Dimension(pLargo, pAlto));
+        this.textArea.setMaximumSize(new Dimension(pLargo, pAlto));
 
-        this.checkBox.setAlignmentX(pX);
-        this.checkBox.setAlignmentY(pY);
+        this.textArea.setAlignmentX(pX);
+        this.textArea.setAlignmentY(pY);
     }
 
     @Override
     public void esVisible(boolean pEstado) {
-        this.checkBox.setVisible(pEstado);
+        this.textArea.setVisible(pEstado);
     }
 
     @Override
     public void agregarTextoAyuda(String pTexto) {
-        this.checkBox.setToolTipText(pTexto);
+        this.textArea.setToolTipText(pTexto);
     }
 
     @Override
     public void agregarEnContenedor(JFrame pFrame) {
-        pFrame.add(this.checkBox);
+        pFrame.add(this.textArea);
     }
 
     @Override
     public String obtenerTexto() {
-        return this.checkBox.getText();
+        return this.textArea.getText();
     }
 
     @Override
     public JComponent obtenerComponente() {
-        return this.checkBox;
+        return this.textArea;
     }
 
     @Override
     public String tipo() {
-        return this.tipo();
+        return this.tipo;
     }
 
     @Override
     public int identificador() {
-        return identificador;
+        return this.identificador;
     }
 }
