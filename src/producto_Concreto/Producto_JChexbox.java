@@ -14,6 +14,10 @@ public class Producto_JChexbox implements Component {
         this.identificador = 200000 + identificador;
     }
 
+    public int generarIdentificador() {
+        return (int) (Math.random() * 9999);
+    }
+
 
     @Override
     public void agregarTexto(String pTexto) {
