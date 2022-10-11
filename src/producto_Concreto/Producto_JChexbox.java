@@ -41,7 +41,7 @@ public class Producto_JChexbox implements Component {
 
     @Override
     public void agregarTextoAyuda(String pTexto) {
-
+        this.checkBox.setToolTipText(pTexto);
     }
 
     @Override
