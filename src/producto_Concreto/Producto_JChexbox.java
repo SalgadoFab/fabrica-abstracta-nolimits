@@ -3,6 +3,7 @@ package producto_Concreto;
 import producto_Abstracto.Component;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Producto_JChexbox implements Component {
 
@@ -18,20 +19,24 @@ public class Producto_JChexbox implements Component {
         return (int) (Math.random() * 9999);
     }
 
-
     @Override
     public void agregarTexto(String pTexto) {
-
+        checkBox.setText(pTexto);
     }
 
     @Override
     public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
+        this.checkBox.setMinimumSize(new Dimension(pLargo, pAlto));
+        this.checkBox.setPreferredSize(new Dimension(pLargo, pAlto));
+        this.checkBox.setMaximumSize(new Dimension(pLargo, pAlto));
 
+        this.checkBox.setAlignmentX(pX);
+        this.checkBox.setAlignmentY(pY);
     }
 
     @Override
     public void esVisible(boolean pEstado) {
-
+        this.checkBox.setVisible(pEstado);
     }
 
     @Override
