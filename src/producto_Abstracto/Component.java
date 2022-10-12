@@ -9,7 +9,7 @@ public interface Component {
 	public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto);
 	public void esVisible(boolean pEstado);
 	public void agregarTextoAyuda(String pTexto);
-	public void agregarEnContenedor(JFrame pFrame);
+	public void agregarEnContenedor(JPanel pFrame);
 	public String obtenerTexto();
 	public JComponent obtenerComponente();
 	public String tipo();

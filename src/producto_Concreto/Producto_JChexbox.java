@@ -26,12 +26,7 @@ public class Producto_JChexbox implements Component {
 
     @Override
     public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
-        this.checkBox.setMinimumSize(new Dimension(pLargo, pAlto));
-        this.checkBox.setPreferredSize(new Dimension(pLargo, pAlto));
-        this.checkBox.setMaximumSize(new Dimension(pLargo, pAlto));
-
-        this.checkBox.setAlignmentX(pX);
-        this.checkBox.setAlignmentY(pY);
+        this.checkBox.setBounds(pX, pY, pLargo, pAlto);
     }
 
     @Override
@@ -45,7 +40,7 @@ public class Producto_JChexbox implements Component {
     }
 
     @Override
-    public void agregarEnContenedor(JFrame pFrame) {
+    public void agregarEnContenedor(JPanel pFrame) {
         pFrame.add(this.checkBox);
     }
 
@@ -61,7 +56,7 @@ public class Producto_JChexbox implements Component {
 
     @Override
     public String tipo() {
-        return this.tipo();
+        return this.tipo;
     }
 
     @Override

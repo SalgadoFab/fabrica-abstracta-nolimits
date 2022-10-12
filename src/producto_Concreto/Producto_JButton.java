@@ -21,7 +21,7 @@ public class Producto_JButton implements Component {
 
     @Override
     public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
-        this.jButton.setSize(pLargo, pAlto);
+        this.jButton.setBounds(pX, pY, pLargo, pAlto);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Producto_JButton implements Component {
     }
 
     @Override
-    public void agregarEnContenedor(JFrame pFrame) {
+    public void agregarEnContenedor(JPanel pFrame) {
         pFrame.add(this.jButton);
     }
 

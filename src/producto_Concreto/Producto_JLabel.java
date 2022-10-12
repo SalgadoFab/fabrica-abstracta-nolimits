@@ -25,12 +25,7 @@ public class Producto_JLabel implements Component {
 
 	@Override
 	public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
-		this.label.setMinimumSize(new Dimension(pLargo, pAlto));
-		this.label.setPreferredSize(new Dimension(pLargo, pAlto));
-		this.label.setMaximumSize(new Dimension(pLargo, pAlto));
-
-		this.label.setAlignmentX(pX);
-		this.label.setAlignmentY(pY);
+		this.label.setBounds(pX, pY, pLargo, pAlto);
 	}
 
 	@Override
@@ -44,7 +39,7 @@ public class Producto_JLabel implements Component {
 	}
 
 	@Override
-	public void agregarEnContenedor(JFrame pFrame) {
+	public void agregarEnContenedor(JPanel pFrame) {
 		pFrame.add(this.label);
 	}
 

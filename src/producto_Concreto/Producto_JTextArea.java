@@ -22,12 +22,7 @@ public class Producto_JTextArea implements Component {
 
     @Override
     public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
-        this.textArea.setMinimumSize(new Dimension(pLargo,pAlto));
-        this.textArea.setPreferredSize(new Dimension(pLargo, pAlto));
-        this.textArea.setMaximumSize(new Dimension(pLargo, pAlto));
-
-        this.textArea.setAlignmentX(pX);
-        this.textArea.setAlignmentY(pY);
+        this.textArea.setBounds(pX, pY, pLargo, pAlto);
     }
 
     @Override
@@ -41,7 +36,7 @@ public class Producto_JTextArea implements Component {
     }
 
     @Override
-    public void agregarEnContenedor(JFrame pFrame) {
+    public void agregarEnContenedor(JPanel pFrame) {
         pFrame.add(this.textArea);
     }
 

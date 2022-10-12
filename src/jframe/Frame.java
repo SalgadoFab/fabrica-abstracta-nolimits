@@ -1,8 +1,12 @@
 package jframe;
+import producto_Abstracto.Component;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class Frame {
 
+    private JPanel panel;
     private JFrame frame;
 
     public Frame(){
@@ -14,14 +18,24 @@ public class Frame {
         frame.setTitle("Fabrica de Componentes");
         frame.setSize(800,500);
         frame.setLocationRelativeTo(null);
+
+        panel = new JPanel();
+        panel.setLayout(null);
+        frame.add(panel, BorderLayout.CENTER);
     }
 
-    public JFrame getPanel(){
-        return this.frame;
+    public JPanel getPanel(){
+        return this.panel;
     }
 
-    public void show(){
-        this.frame.setVisible(true);
+
+    public void launch () {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                frame.setVisible(true);
+            }
+        });
     }
 }
 
