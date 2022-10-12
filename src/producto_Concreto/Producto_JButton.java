@@ -51,7 +51,7 @@ public class Producto_JButton implements Component {
 
     @Override
     public String tipo() {
-        return this.tipo;
+        return tipo;
     }
 
     @Override

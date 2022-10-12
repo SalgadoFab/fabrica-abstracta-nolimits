@@ -1,7 +1,6 @@
 package producto_Concreto;
 import producto_Abstracto.Component;
 import javax.swing.*;
-import java.awt.*;
 
 public class Producto_JTextArea implements Component {
     private JTextArea textArea = new JTextArea();
@@ -52,7 +51,7 @@ public class Producto_JTextArea implements Component {
 
     @Override
     public String tipo() {
-        return this.tipo;
+        return tipo;
     }
 
     @Override

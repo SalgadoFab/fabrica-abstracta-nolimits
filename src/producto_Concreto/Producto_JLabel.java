@@ -1,8 +1,6 @@
 package producto_Concreto;
 import producto_Abstracto.Component;
 import javax.swing.*;
-import java.awt.*;
-
 
 //Producto Concreto
 public class Producto_JLabel implements Component {
@@ -55,7 +53,7 @@ public class Producto_JLabel implements Component {
 
 	@Override
 	public String tipo() {
-		return this.tipo;
+		return tipo;
 	}
 
 	@Override

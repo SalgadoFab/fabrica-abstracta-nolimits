@@ -11,8 +11,7 @@ import producto_Abstracto.Component;
 public class Fabrica_SwingComponent {
 
     public static Component CrearFabricaDeComponentes(SwingComponent fabrica) {
-        Component objComponente = fabrica.crearComponente();
-        return objComponente;
+        return fabrica.crearComponente();
     }
 
     public static Frame setComponent(Component component) {
@@ -40,29 +39,25 @@ public class Fabrica_SwingComponent {
         Component component;
         SwingComponent fabrica;
         switch (opcion) {
-            case 1:
+            case 1 -> {
                 fabrica = new Fabrica_JLabel();
                 component = CrearFabricaDeComponentes(fabrica);
                 showComponent(component);
-                break;
-            case 2:
+            }
+            case 2 -> {
                 fabrica = new Fabrica_JButton();
                 showComponent(CrearFabricaDeComponentes(fabrica));
-                break;
-            case 3:
+            }
+            case 3 -> {
                 fabrica = new Fabrica_JTextArea();
                 showComponent(CrearFabricaDeComponentes(fabrica));
-                break;
-            case 4:
+            }
+            case 4 -> {
                 fabrica = new Fabrica_JCheckbox();
                 showComponent(CrearFabricaDeComponentes(fabrica));
-                break;
-            case 5:
-                sMensaje = "Muchas gracias por usar el sistema";
-                break;
-            default:
-                sMensaje = "Opcion invalida";
-                break;
+            }
+            case 5 -> sMensaje = "Muchas gracias por usar el sistema";
+            default -> sMensaje = "Opcion invalida";
         }
         return sMensaje;
     }

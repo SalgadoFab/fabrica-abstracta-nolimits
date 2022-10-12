@@ -1,5 +1,4 @@
 package jframe;
-import producto_Abstracto.Component;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,12 +29,7 @@ public class Frame {
 
 
     public void launch () {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                frame.setVisible(true);
-            }
-        });
+        EventQueue.invokeLater(() -> frame.setVisible(true));
     }
 }
 
