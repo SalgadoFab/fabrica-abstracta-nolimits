@@ -8,11 +8,7 @@ import fabrica_Concreta.Fabrica_JTextArea;
 import jframe.Frame;
 import producto_Abstracto.Component;
 
-import java.awt.*;
-import java.util.ArrayList;
-
 public class Fabrica_SwingComponent {
-    private static ArrayList<Component> arComponents = new ArrayList<Component>();
 
     public static Component CrearFabricaDeComponentes(SwingComponent fabrica) {
         Component objComponente = fabrica.crearComponente();
