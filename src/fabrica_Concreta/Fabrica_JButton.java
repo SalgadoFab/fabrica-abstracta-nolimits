@@ -1,22 +1,15 @@
 package fabrica_Concreta;
 
+import fabrica_Abstracta.SwingComponent;
 import producto_Abstracto.Component;
 import producto_Concreto.Producto_JButton;
 
-import javax.swing.*;
-
-public class Fabrica_JButton {
-
-
+public class Fabrica_JButton implements SwingComponent {
     public Component crearComponente() {
        Producto_JButton button = new Producto_JButton();
 
-        button.agregarTexto("Botón");
+        button.agregarTexto("Texto Default");
         button.setIdentificador(button.generarIdentificador());
-        button.agregarEnContenedor(new JFrame());
-        button.esVisible(true);
-        button.agregarDimensiones(500,800,20,20);
-
         return  button;
     }
 }

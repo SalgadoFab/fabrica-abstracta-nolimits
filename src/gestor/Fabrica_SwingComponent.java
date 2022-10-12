@@ -2,17 +2,19 @@ package gestor;
 
 import fabrica_Abstracta.SwingComponent;
 import fabrica_Concreta.Fabrica_JButton;
+import fabrica_Concreta.Fabrica_JCheckbox;
+import fabrica_Concreta.Fabrica_JTextArea;
+import jframe.Frame;
 import producto_Abstracto.Component;
-import producto_Concreto.Producto_JButton;
 
-import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Fabrica_SwingComponent {
     private static ArrayList<Component> arComponents = new ArrayList<Component>();
+
     public static String CrearFabricaDeComponentes(SwingComponent fabrica) {
         Component objComponentes = fabrica.crearComponente();
-        agregar_Componente(objComponentes);
         return objComponentes.tipo();
     }
 
@@ -29,7 +31,22 @@ public class Fabrica_SwingComponent {
         return msDatos;
     }
 
+    public Frame setComponent (Component component) {
+        Frame frame = new Frame();
+        component.agregarEnContenedor(frame.getPanel());
 
+        return frame;
+    }
+
+    public void showComponent(Component component) {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Frame frame = setComponent(component);
+                frame.show();
+            }
+        });
+    }
 
     /**
      * Function:
@@ -44,51 +61,39 @@ public class Fabrica_SwingComponent {
      **/
     public static String procesarFuncion(int opcion) {
         String sMensaje = "";
-
+        SwingComponent fabrica;
         switch (opcion) {
-
             case 1:
-                SwingComponent sComponent = new SwingComponent() {
+                EventQueue.invokeLater(new Runnable() {
                     @Override
-                    public Component crearComponente() {
-                        Producto_JButton JButton = new Producto_JButton();
-                        JButton.agregarTexto("Prueba siu");
-                        return JButton;
+                    public void run() {
+                        Frame frame = new Frame();
+                        frame.show();
                     }
-                };
-                sMensaje = CrearFabricaDeComponentes(sComponent);
+                });
+//                fabrica = new Fabrica_JLabel();
+//                sMensaje = CrearFabricaDeComponentes(fabrica);
                 break;
-//
-//            case 2:
-//                sComponent = new Fabrica_Bus();
-//                sMensaje = CrearFabricaDeVehiculos(moVeh);
-//                break;
-//
-//            case 3:
-//                sComponent = new Fabrica_Microbus();
-//                sMensaje = CrearFabricaDeVehiculos(moVeh);
-//                break;
-//
-//            case 4:
-////                sComponent = new Fabrica_Microbus();
-////                sMensaje = CrearFabricaDeVehiculos(moVeh);
-//                break;
-//
-//            case 5:
-//                sMensaje = obtener_informacion_tranportes();
-//                break;
-
-            case 6:
+            case 2:
+                fabrica = new Fabrica_JCheckbox();
+                sMensaje = CrearFabricaDeComponentes(fabrica);
+                break;
+            case 3:
+                fabrica = new Fabrica_JTextArea();
+                sMensaje = CrearFabricaDeComponentes(fabrica);
+                break;
+            case 4:
+                fabrica = new Fabrica_JButton();
+                sMensaje = CrearFabricaDeComponentes(fabrica);
+                break;
+            case 5:
                 sMensaje = "Muchas gracias por usar el sistema";
                 break;
-
             default:
                 sMensaje = "Opcion invalida";
                 break;
         }
-
         return sMensaje;
-
     }
 
     private void parametrosComponentes() {

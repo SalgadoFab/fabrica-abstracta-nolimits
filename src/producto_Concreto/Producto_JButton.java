@@ -1,16 +1,13 @@
 package producto_Concreto;
-
 import producto_Abstracto.Component;
-
 import javax.swing.*;
-import java.awt.*;
-
 
 public class Producto_JButton implements Component {
 
     private JButton jButton = new JButton();
     private static final String tipo = "JButton";
     private int identificador;
+
     public void setIdentificador(int identificador) {
         this.identificador = 200000 + identificador;
     }
@@ -24,12 +21,7 @@ public class Producto_JButton implements Component {
 
     @Override
     public void agregarDimensiones(int pX, int pY, int pLargo, int pAlto) {
-        this.jButton.setMinimumSize(new Dimension(pLargo, pAlto));
-        this.jButton.setPreferredSize(new Dimension(pLargo, pAlto));
-        this.jButton.setMaximumSize(new Dimension(pLargo, pAlto));
-
-        this.jButton.setAlignmentX(pX);
-        this.jButton.setAlignmentY(pY);
+        this.jButton.setSize(pLargo, pAlto);
     }
 
     @Override
